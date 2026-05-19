@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xem Ảnh - StPageFlip</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- StPageFlip Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://unpkg.com/st-page-flip@latest/dist/stpageflip.umd.js"></script>
+</head>
+<body>
+    <div class="background-frame">
+        <!-- Khung 1: Nền -->
+        <div class="frame-background">
+            <div class="background-content">
+                <h1>📚 Xem Ảnh Kiểu Lật Trang</h1>
+                <p>Kéo hoặc vuốt để xem ảnh tiếp theo</p>
+                <div class="background-info">
+                    <p>Ứng dụng này cho phép bạn xem các ảnh trong thư mục với hiệu ứng lật trang mượt mà.</p>
+                    <p id="photo-count"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Khung 2: Xem ảnh với StPageFlip -->
+        <div class="frame-viewer">
+            <div class="viewer-header">
+                <h2>Album Ảnh</h2>
+                <div class="controls">
+                    <button id="btn-prev" class="btn-control" title="Ảnh trước">
+                        <span>◀</span>
+                    </button>
+                    <span id="page-info" class="page-info">1 / 0</span>
+                    <button id="btn-next" class="btn-control" title="Ảnh tiếp theo">
+                        <span>▶</span>
+                    </button>
+                    <button id="btn-fullscreen" class="btn-control" title="Toàn màn hình">
+                        <span>⛶</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="viewer-content">
+                <div class="pageflip-container">
+                    <div class="page" id="page-1">
+                        <div class="page-content">
+                            <img id="image-1" src="images/default.jpg" alt="Ảnh 1">
+                        </div>
+                    </div>
+                    <div class="page" id="page-2">
+                        <div class="page-content">
+                            <img id="image-2" src="images/default.jpg" alt="Ảnh 2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="viewer-footer">
+                <p id="image-name">Tên ảnh sẽ hiển thị ở đây</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upload ảnh (tùy chọn) -->
+    <div class="upload-section">
+        <input type="file" id="file-input" multiple accept="image/*" style="display: none;">
+        <button id="btn-upload" class="btn-upload">📁 Tải ảnh lên</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
